@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>lamp</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>chase.qi@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                A LAMP stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web applications.
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Lava-Test Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>debian
+                                
+                                    <li>ubuntu
+                                
+                                    <li>centos
+                                
+                                    <li>fedora
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>mustang
+                                
+                                    <li>overdrive
+                                
+                                    <li>d02
+                                
+                                    <li>d03
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+                <h3>Parameters</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            
+                            <tr>
+                                <td>SKIP_INSTALL</td>
+                                <td>
+                                
+                                    False
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                    </tbody>
+                </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>cd ./automated/linux/lamp/</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>./lamp.sh -s "${SKIP_INSTALL}"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </body>
+</html>

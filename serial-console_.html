@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>serial-console</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>amit.khare@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Test if the serial connection to the board works
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Manual Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>panda
+                                
+                                    <li>panda-es
+                                
+                                    <li>vexpress-a9
+                                
+                                    <li>vexpress-tc2
+                                
+                                    <li>juno
+                                
+                                    <li>arndale
+                                
+                                    <li>ifc6410
+                                
+                                    <li>hi6220-hikey
+                                
+                                    <li>apq8016-sbc
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>manual-test
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>android
+                                
+                                    <li>ubuntu
+                                
+                                    <li>openembedded
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>Connect the serial cable to the device under test</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Launch minicom in terminal of host PC.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>$ minicom -D /dev/ttyUSB0 -w -C minicom_log.txt</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Power the device under test</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>After boot sequence is complete run the following command in the console</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>$ ls -l</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>Boot log is displayed in minicom after powering the device under test</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Command line prompt is displayed after successful boot.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Input by keyboard in works and characters are echoed back and displayed in minicom</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            
+        </div>
+    </body>
+</html>

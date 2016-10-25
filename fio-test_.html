@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>fio-test</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>naresh.kamboju@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                FIO or Flexible IO is a versatile IO workload generator Test on Linux. The target block device partition required to run this test to be set as '/dev/sdbX'
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Lava-Test-Shell Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>mustang
+                                
+                                    <li>overdrive
+                                
+                                    <li>d02
+                                
+                                    <li>d03
+                                
+                                    <li>hi6220-hikey
+                                
+                                    <li>apq8016-sbc
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>lava-test-shell
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>performance
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>debian
+                                
+                                    <li>ubuntu
+                                
+                                    <li>centos
+                                
+                                    <li>fedora
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+                <h3>Parameters</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            
+                            <tr>
+                                <td>BLK_DEV_PARTITION</td>
+                                <td>
+                                
+                                    
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>SKIP_INSTALL</td>
+                                <td>
+                                
+                                    False
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                    </tbody>
+                </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>cd ./automated/linux/fio-test/</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>./fio-test.sh -p "${BLK_DEV_PARTITION}" -s "${SKIP_INSTALL}"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="metadata">
+                <h1>Metadata</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                                
+                                    <ul>
+                                    
+                                        <li>milosz.wasilewski@linaro.org
+                                    
+                                    </ul>
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>name</td>
+                            <td>
+                                
+                                    rpb-ee-1612-common
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                                
+                                    Linaro Test Plan v1
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>approver</td>
+                            <td>
+                                
+                                    <ul>
+                                    
+                                        <li>alan.benett@linaro.org
+                                    
+                                    </ul>
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                                
+                                    CentOS
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                                
+                                    <ul>
+                                    
+                                        <li>d03
+                                    
+                                        <li>thunderX
+                                    
+                                        <li>moonshot
+                                    
+                                        <li>mustang
+                                    
+                                    </ul>
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                                
+                                    Test plan for EE RPB. Common features across all boards
+                                
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div id="requirements">
+                <h1>Requirements</h1>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>1 SBBR compliance</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        <h3>Manual tests</h3>
+                            
+                            <div class="alert alert-danger">
+                            <h5>1.1</h5>
+                            <table class="table table-striped">
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/luvos.yaml
+                
+            </tr>
+            
+        
+            
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>2 PXE boot</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        <h3>Manual tests</h3>
+                            
+                            <div class="alert alert-danger">
+                            <h5>2.1</h5>
+                            <table class="table table-striped">
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/pxe_boot.yaml
+                
+            </tr>
+            
+        
+            
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div class="alert alert-danger">
+                            <h5>2.2</h5>
+                            <table class="table table-striped">
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>parameters</td>
+                <td>
+                
+                    
+                    <strong>installer</strong>: debian<br/>
+                    
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/os_installer.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div class="alert alert-danger">
+                            <h5>2.3</h5>
+                            <table class="table table-striped">
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>parameters</td>
+                <td>
+                
+                    
+                    <strong>installer</strong>: centos<br/>
+                    
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/os_installer.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>3 boot from disk</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        <h3>Manual tests</h3>
+                            
+                            <div class="alert alert-danger">
+                            <h5>3.1</h5>
+                            <table class="table table-striped">
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/boot.yaml
+                
+            </tr>
+            
+        
+            
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>4 Linux kernel</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>4.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="smoke-tests-basic_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>timeout</td>
+                <td>
+                
+                    1800
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/smoke/smoke.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div >
+                            <h5>4.2</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="ltp_TST_CMDFILES-syscalls,mm,math,timers,fcntl-locktests,ipc,fsx,fs,hugetlb,io,nptl,pty,containers,fs_bind,filecaps,admin_tools,connectors.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>parameters</td>
+                <td>
+                
+                    
+                    <strong>TST_CMDFILES</strong>: syscalls,mm,math,timers,fcntl-locktests,ipc,fsx,fs,hugetlb,io,nptl,pty,containers,fs_bind,filecaps,admin_tools,connectors<br/>
+                    
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/ltp/ltp.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>5 UART console</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        <h3>Manual tests</h3>
+                            
+                            <div >
+                            <h5>5.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="serial-console_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/serial-console.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>6 Toolchain</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>7 SATA drive support</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>7.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="disk-partitioning-test_DEVICE-devsdb.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>parameters</td>
+                <td>
+                
+                    
+                    <strong>DEVICE</strong>: /dev/sdb<br/>
+                    
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/disk/disk-partitioning.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div >
+                            <h5>7.2</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="disk-partitioning-test_DEVICE-devsdb_SKIP_INSTALL-True_FILESYSTEM-fat32.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>parameters</td>
+                <td>
+                
+                    
+                    <strong>DEVICE</strong>: /dev/sdb<br/>
+                    
+                    <strong>SKIP_INSTALL</strong>: True<br/>
+                    
+                    <strong>FILESYSTEM</strong>: fat32<br/>
+                    
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/disk/disk-partitioning.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>8 RAID support</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div class="alert alert-danger">
+                            <h5>8.1</h5>
+                            <table class="table table-striped">
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/raid/raid.yaml
+                
+            </tr>
+            
+        
+            
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>9 onboard ethernet support</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        <h3>Manual tests</h3>
+                            
+                            <div >
+                            <h5>9.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="multi-nic-download_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    False
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/multi-nic-download.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div class="alert alert-danger">
+                            <h5>9.2</h5>
+                            <table class="table table-striped">
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/eth-download.yaml
+                
+            </tr>
+            
+        
+            
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div class="alert alert-danger">
+                            <h5>9.3</h5>
+                            <table class="table table-striped">
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/eth-bonding.yaml
+                
+            </tr>
+            
+        
+            
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    False
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>9.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="network-tests-basic_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/network-basic/network-basic.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>10 PCIe support</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        <h3>Manual tests</h3>
+                            
+                            <div >
+                            <h5>10.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="multi-nic-download_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/multi-nic-download.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div class="alert alert-danger">
+                            <h5>10.2</h5>
+                            <table class="table table-striped">
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/eth-bonding.yaml
+                
+            </tr>
+            
+        
+            
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    False
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div >
+                            <h5>10.3</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="IP forwarding_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    False
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/ip_forwarding.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>10.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="network-tests-basic_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/network-basic/network-basic.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>11 software shutdown</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        <h3>Manual tests</h3>
+                            
+                            <div >
+                            <h5>11.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="power-off-cmd_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/power-off-cmd.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>12 software reboot</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        <h3>Manual tests</h3>
+                            
+                            <div >
+                            <h5>12.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="reboot_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/reboot.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>13 KVM system emulation</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        <h3>Manual tests</h3>
+                            
+                            <div >
+                            <h5>13.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="kvm-arm32-guest-on-arm64-host_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/kvm-arm32-guest-on-arm64-host.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div >
+                            <h5>13.2</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="kvm-arm64-guest-on-arm64-host_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    manual/generic/linux/kvm-arm64-guest-on-arm64-host.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>14 Docker</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>15 OpenJDK</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>15.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="openjdk-smoke-test_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/openjdk/openjdk-smoke.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>16 MySQL database</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>17 Apache webserver</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>17.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="lamp_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/lamp/lamp.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>18 NGiNX webserver</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>19 Webserver performance</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>20 OpenSSH</h2>
+                    <h4>Owner: </h4>
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>21 OpenSSL</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>21.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="openssl-speed_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/openssl/openssl-speed.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>22 OpenStack (Core)</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>23 Ceph</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>24 Hadoop</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>25 Spark</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>26 HAProxy</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>27 Networking performance</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>28 Memory performance</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>29 Disk performance</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>29.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="fio-test_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/fio-test/fio-test.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div >
+                            <h5>29.2</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="dd-speed-test_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/dd-wr-speed/dd-wr-speed.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    ae7807fbdc457301892b2d4734c7f7f5dbba94e0
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>30 CPU performance</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+                    
+                    <div class="alert alert-danger">
+                    <h2>31 System robustness</h2>
+                    <h4>Owner: martin.stadtler@linaro.org</h4>
+                    
+                    </div>
+                
+            </div>
+        </div>
+    </body>
+</html>

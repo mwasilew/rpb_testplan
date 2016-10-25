@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>multi-nic-download</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>amit.khare@linaro.org
+                                
+                                    <li>chase.qi@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Test if download can be performed by selecting an interface from multiple available interfaces.
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Manual Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>hi6220-hikey
+                                
+                                    <li>apq8016-sbc
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>manual-test
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>debian
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>Flash the board and boot succesfully.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Make sure "curl" and "iftop" utilities are installed, and at least two interfaces are configured and connected to the board.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run, "sudo su" to become root.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run, "ifconfig" to check both interfaces (going to be used for this test) are connected and IP address is assigned.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run the following two commands to make sure that rp_filter is set to 0.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>echo 0 > /proc/sys/net/ipv4/conf/all/rp_filter</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>echo 0 > /proc/sys/net/ipv4/conf/default/rp_filter</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run, "sysctl -a |grep rp_filter" to check arp setting.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run, "curl -O --interface interface-1-ip http://samplemedia.linaro.org/MPEG4/big_buck_bunny_1080p_MPEG4_MP3_25fps_7600K_short.AVI"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run, "curl -O --interface interface-2-ip http://samplemedia.linaro.org/MPEG4/big_buck_bunny_1080p_MPEG4_MP3_25fps_7600K_short.AVI"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Use "iftop" to verify that Curl is using the correct interface to download file in both cases.</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>File can be successfully downloaded with both interfaces.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>The correct interface was used to download file.</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            
+        </div>
+    </body>
+</html>

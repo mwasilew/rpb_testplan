@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>ltp</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>milosz.wasilewski@linaro.org
+                                
+                                    <li>fathi.boudra@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Run LTP test suite on Ubuntu
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Lava-Test-Shell Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>ubuntu
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>panda
+                                
+                                    <li>panda-es
+                                
+                                    <li>arndale
+                                
+                                    <li>vexpress-a9
+                                
+                                    <li>vexpress-tc2
+                                
+                                    <li>ifc6410
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+                <h3>Parameters</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            
+                            <tr>
+                                <td>TST_CMDFILES</td>
+                                <td>
+                                
+                                    syscalls,mm,math,timers,fcntl-locktests,ipc,fsx,fs,hugetlb,io,nptl,pty,containers,fs_bind,filecaps,admin_tools,connectors
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>LTP_VERSION</td>
+                                <td>
+                                
+                                    20160920
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>SKIP_INSTALL</td>
+                                <td>
+                                
+                                    False
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                    </tbody>
+                </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>cd ./automated/linux/ltp/</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>./ltp.sh -T "${TST_CMDFILES}" -S "${SKIPFILE}" -s "${SKIP_INSTALL}" -v "${LTP_VERSION}"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </body>
+</html>

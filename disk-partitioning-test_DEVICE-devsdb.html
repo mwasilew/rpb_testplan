@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>disk-partitioning-test</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>chase.qi@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Disk partitioning test.
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Lava-Test-Shell Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>mustang
+                                
+                                    <li>hi6220-hikey
+                                
+                                    <li>apq8016-sbc
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>lava-test-shell
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>debian
+                                
+                                    <li>ubuntu
+                                
+                                    <li>fedora
+                                
+                                    <li>centos
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+                <h3>Parameters</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            
+                            <tr>
+                                <td>DEVICE</td>
+                                <td>
+                                
+                                    /dev/sdb
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>SKIP_INSTALL</td>
+                                <td>
+                                
+                                    False
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>DISKLABEL</td>
+                                <td>
+                                
+                                    gpt
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>FILESYSTEM</td>
+                                <td>
+                                
+                                    ext4
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                    </tbody>
+                </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>cd ./automated/linux/disk/</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>./disk-partitioning.sh -d "${DEVICE}" -l "${DISKLABEL}" -f "${FILESYSTEM}" -s "${SKIP_INSTALL}"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </body>
+</html>

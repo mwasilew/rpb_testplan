@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>reboot</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>amit.khare@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Check the board can be rebooted or not
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Manual Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>panda
+                                
+                                    <li>panda-es
+                                
+                                    <li>arndale
+                                
+                                    <li>hi6220-hikey
+                                
+                                    <li>apq8016-sbc
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>manual-test
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>ubuntu
+                                
+                                    <li>openembedded
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>Power on the board until boot up successfully.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Reboot the board from terminal. Run</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>$ sudo shutdown -r now</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>Reboot should be done successfully from terminal, without kernel panic, crash, hang or any other serve error observed.</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>openssl-speed</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>chase.qi@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Use openssl speed command to test the performance of cryptographic algorithms
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Lava-Test Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>performance
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>debian
+                                
+                                    <li>ubuntu
+                                
+                                    <li>fedora
+                                
+                                    <li>centos
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>juno
+                                
+                                    <li>hi6220-hikey
+                                
+                                    <li>apq8016-sbc
+                                
+                                    <li>mustang
+                                
+                                    <li>d03
+                                
+                                    <li>d05
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+                <h3>Parameters</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            
+                            <tr>
+                                <td>SKIP_INSTALL</td>
+                                <td>
+                                
+                                    False
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                    </tbody>
+                </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>cd ./automated/linux/openssl/</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>./openssl-speed.sh -s "${SKIP_INSTALL}"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </body>
+</html>

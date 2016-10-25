@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>IP forwarding</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>chase.qi@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Test if Kernel IP forwarding works.
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Manual Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>d02
+                                
+                                    <li>overdrive
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>manual-test
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>debian
+                                
+                                    <li>centos
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>SUT(system under test) should has at least two Ethernet ports. Assume you use SUT_eth0 and SUT_eth1 here.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Make sure iptables package installed on SUT.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Boot SUT and test client to OS.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run "sudo su -" to switch to root user.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run "ip addr show" to check if the ports used for testing are detected.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Do the following steps on SUT to set test environment and enable ip_forward.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Connect SUT_eth1 to router0 that connected to internet. Assume the gateway IP is 10.0.0.1.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Connect SUT_eth0 to router1 that used for private network.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Execute "dhclient eth1" to get a IP address or set IP for it manually.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Execute "ping -I eth1 10.0.0.1" and "ping -I eth1 8.8.8.8" to check if eth1 is set properly.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ip link set eth0 down</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ip addr add 192.168.1.1/24 dev eth0</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ip link set eth0 up</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>echo 1 > /proc/sys/net/ipv4/conf/all/forwarding</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>iptables -A FORWARD -i eth0 -j ACCEPT</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Do the following steps on test client to test if Kernel IP forwarding works.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Connect test client eth0 port to the private route1.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ip link set eth0 down</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ip addr add 192.168.1.2/24 dev eth0</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ip link set eth0 up</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ip route add default via 192.168.1.1</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ping 10.0.0.1</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ping 8.8.8.8</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>ip_forward and NAT can be enabled successfully.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>ping tests from test client to router0 and Google DNS server are successful.</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            
+        </div>
+    </body>
+</html>

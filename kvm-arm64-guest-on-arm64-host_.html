@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>kvm-arm64-guest-on-arm64-host</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>naresh.kamboju@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Test kvm running on arm64 bit guest on arm64 bit host
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Manual Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>hi6220-hikey
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>manual-test
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>ubuntu
+                                
+                                    <li>openembedded
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+            
+                <h3>Installation</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>Boot arm64 bit board</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>After boot success check for "ls /dev/kvm" kvm device entry</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>If /dev/kvm not found, mark test case as not applicable and exit</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Else continue below steps for installation of required packages</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run "sudo apt-get update"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run "sudo apt-get install qemu-system wget xz-utils"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Use arm64 kernel Image from /boot</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>cp /boot/vmlinuz-`uname -r` Image</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Use arm64 initrd.img from /boot</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>{'Note': 'please double check is it Debian initrd image or CentOS initrd'}</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>{'Note': 'please check the name of initrd file under /boot and kernel version appended to file name'}</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>cp /boot/initrd.img-`uname -r` initrd.img</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Download arm64 minimal rootfs from linaro snapshots</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>{'Note': 'please double check latest in the below link it may be build number'}</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>wget http://snapshots.linaro.org/ubuntu/images/kvm-guest/latest/arm64/kvm-arm64.qcow2.xz</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>xz -d kvm-arm64.qcow2.xz</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Test arm64 guest Image on arm64 host</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run "qemu-system-aarch64 -smp 2 -m 512 -cpu host -machine type=virt,gic-version=host -kernel Image -initrd initrd.img -append 'root=/dev/vda2 rw rootwait console=ttyAMA0,38400n8  earlycon=pl011,0x9000000' -device virtio-blk-device,drive=image -drive if=none,id=image,file=kvm-arm64.qcow2 -nographic -enable-kvm 2>&1 | tee tee kvm-arm64.log"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Wait for couple of minutes let the qemu start booting guest kernel</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>qemu should start booting the given guest kernel</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>qeme guest kernel boot should be successful</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Run "uname -a" to check system information</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            
+        </div>
+    </body>
+</html>
