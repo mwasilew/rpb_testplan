@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>smoke-tests-basic</h1>
+            <h1>24h-stress-test</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -21,8 +21,6 @@
                             <td>
                             
                                 <ul>
-                                
-                                    <li>milosz.wasilewski@linaro.org
                                 
                                     <li>chase.qi@linaro.org
                                 
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                Run basic smoke tests.
+                                Run stress_ng, stress_oom and stress_network test on Debian
                             
                             </td>
                         </tr>
@@ -48,7 +46,7 @@
                             <td>format</td>
                             <td>
                             
-                                Lava-Test Test Definition 1.0
+                                Lava-Test-Shell Test Definition 1.0
                             
                             </td>
                         </tr>
@@ -61,7 +59,7 @@
                             
                                 <ul>
                                 
-                                    <li>functional
+                                    <li>stress
                                 
                                 </ul>
                             
@@ -76,9 +74,9 @@
                             
                                 <ul>
                                 
-                                    <li>debian
+                                    <li>ubuntu
                                 
-                                    <li>fedora
+                                    <li>debian
                                 
                                 </ul>
                             
@@ -92,12 +90,6 @@
                             <td>
                             
                                 <ul>
-                                
-                                    <li>panda
-                                
-                                    <li>panda-es
-                                
-                                    <li>juno
                                 
                                     <li>hi6220-hikey
                                 
@@ -120,10 +112,54 @@
                         
                             
                             <tr>
-                                <td>SKIP_INSTALL</td>
+                                <td>DURATION</td>
                                 <td>
                                 
-                                    False
+                                    21600
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>LINK</td>
+                                <td>
+                                
+                                    http://people.linaro.org/~chase.qi/testdata/stress-network.img
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>TEST</td>
+                                <td>
+                                
+                                    stress_network
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>INTERFACE</td>
+                                <td>
+                                
+                                    eth0
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>MD5</td>
+                                <td>
+                                
+                                    e5c834fbdaa6bfd8eac5eb9404eefdd4
                                 
                                 </td>
                             </tr>
@@ -133,20 +169,43 @@
                 </table>
             
             
+                <h3>Installation</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            
             <h3>Run</h3>
             <table class="table table-striped">
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/smoke/</td>
+                            <td>if [ "$TEST" = "stress_ng" ]; then</td>
                         </tr>
                     
                         <tr>
-                            <td>./smoke.sh -s "${SKIP_INSTALL}"</td>
+                            <td>./24h-stress-test.sh -t $TEST -d $DURATION</td>
                         </tr>
                     
                         <tr>
-                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                            <td>elif [ "$TEST" = "stress_oom" ]; then</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>./24h-stress-test.sh -t $TEST -d $DURATION</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>elif [ "$TEST" = "stress_network" ]; then</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>./24h-stress-test.sh -t $TEST -d $DURATION -i $INTERFACE -l $LINK -m $MD5</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>fi</td>
                         </tr>
                     
                 </tbody>

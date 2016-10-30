@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>smoke-tests-basic</h1>
+            <h1>lmbench-memory</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -21,8 +21,6 @@
                             <td>
                             
                                 <ul>
-                                
-                                    <li>milosz.wasilewski@linaro.org
                                 
                                     <li>chase.qi@linaro.org
                                 
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                Run basic smoke tests.
+                                Run lmbench memory bandwidth and latency tests.
                             
                             </td>
                         </tr>
@@ -61,7 +59,7 @@
                             
                                 <ul>
                                 
-                                    <li>functional
+                                    <li>performance
                                 
                                 </ul>
                             
@@ -78,7 +76,11 @@
                                 
                                     <li>debian
                                 
+                                    <li>ubuntu
+                                
                                     <li>fedora
+                                
+                                    <li>centos
                                 
                                 </ul>
                             
@@ -93,15 +95,19 @@
                             
                                 <ul>
                                 
-                                    <li>panda
-                                
-                                    <li>panda-es
-                                
-                                    <li>juno
-                                
                                     <li>hi6220-hikey
                                 
                                     <li>apq8016-sbc
+                                
+                                    <li>mustang
+                                
+                                    <li>moonshot
+                                
+                                    <li>thunderX
+                                
+                                    <li>d03
+                                
+                                    <li>d05
                                 
                                 </ul>
                             
@@ -114,35 +120,17 @@
                 </tbody>
             </table>
             
-                <h3>Parameters</h3>
-                <table class="table table-striped">
-                    <tbody>
-                        
-                            
-                            <tr>
-                                <td>SKIP_INSTALL</td>
-                                <td>
-                                
-                                    False
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                    </tbody>
-                </table>
-            
             
             <h3>Run</h3>
             <table class="table table-striped">
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/smoke/</td>
+                            <td>cd ./automated/linux/lmbench/</td>
                         </tr>
                     
                         <tr>
-                            <td>./smoke.sh -s "${SKIP_INSTALL}"</td>
+                            <td>./lmbench-memory.sh</td>
                         </tr>
                     
                         <tr>

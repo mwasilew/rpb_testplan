@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>smoke-tests-basic</h1>
+            <h1>device-read-perf</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -21,8 +21,6 @@
                             <td>
                             
                                 <ul>
-                                
-                                    <li>milosz.wasilewski@linaro.org
                                 
                                     <li>chase.qi@linaro.org
                                 
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                Run basic smoke tests.
+                                Use 'hdparm -t' to perform timings of block device reads for benchmark and comparison purposes.
                             
                             </td>
                         </tr>
@@ -61,7 +59,7 @@
                             
                                 <ul>
                                 
-                                    <li>functional
+                                    <li>performance
                                 
                                 </ul>
                             
@@ -78,7 +76,11 @@
                                 
                                     <li>debian
                                 
+                                    <li>ubuntu
+                                
                                     <li>fedora
+                                
+                                    <li>centos
                                 
                                 </ul>
                             
@@ -93,15 +95,13 @@
                             
                                 <ul>
                                 
-                                    <li>panda
+                                    <li>mustang
                                 
-                                    <li>panda-es
+                                    <li>d03
                                 
-                                    <li>juno
+                                    <li>d05
                                 
-                                    <li>hi6220-hikey
-                                
-                                    <li>apq8016-sbc
+                                    <li>ifc6410
                                 
                                 </ul>
                             
@@ -117,6 +117,17 @@
                 <h3>Parameters</h3>
                 <table class="table table-striped">
                     <tbody>
+                        
+                            
+                            <tr>
+                                <td>DEVICE</td>
+                                <td>
+                                
+                                    
+                                
+                                </td>
+                            </tr>
+                            
                         
                             
                             <tr>
@@ -138,11 +149,11 @@
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/smoke/</td>
+                            <td>cd ./automated/linux/device-read-perf/</td>
                         </tr>
                     
                         <tr>
-                            <td>./smoke.sh -s "${SKIP_INSTALL}"</td>
+                            <td>./device-read-perf.sh -d "${DEVICE}" -s "${SKIP_INSTALL}"</td>
                         </tr>
                     
                         <tr>
