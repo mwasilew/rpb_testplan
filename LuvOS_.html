@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>LuvOS</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>milosz.wasilewski@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Execute all tests included in LuvOS. LuvOS is a distribution based on OpenEmbedded build system. It includes UEFI and ACPI test suites. More details in wiki: https://wiki.linaro.org/LEG/Engineering/LUV
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Manual Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>d02
+                                
+                                    <li>d03
+                                
+                                    <li>d05
+                                
+                                    <li>overdrive
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>manual-test
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>luvOS
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>Download latest LuvOS stable live image http://snapshots.linaro.org/openembedded/pre-built/luvos/</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Mount the image on local host and change the kernel to the one supporting tested hardware platform.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Boot the board using the LuvOS live image</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>All tests are executed upon boot</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>There are no failed tests</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            
+        </div>
+    </body>
+</html>
