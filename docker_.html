@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>LuvOS</h1>
+            <h1>docker</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -22,7 +22,9 @@
                             
                                 <ul>
                                 
-                                    <li>milosz.wasilewski@linaro.org
+                                    <li>nicolas.dechesne@linaro.org
+                                
+                                    <li>chase.qi@linaro.org
                                 
                                 </ul>
                             
@@ -35,7 +37,7 @@
                             <td>description</td>
                             <td>
                             
-                                Execute all tests included in LuvOS. LuvOS is a distribution based on OpenEmbedded build system. It includes UEFI and ACPI test suites. More details in wiki: https://wiki.linaro.org/LEG/Engineering/LUV
+                                Ensure that Docker can be used
                             
                             </td>
                         </tr>
@@ -46,7 +48,7 @@
                             <td>format</td>
                             <td>
                             
-                                Manual Test Definition 1.0
+                                Lava-Test-Shell Test Definition 1.0
                             
                             </td>
                         </tr>
@@ -59,13 +61,19 @@
                             
                                 <ul>
                                 
-                                    <li>d02
+                                    <li>hi6220-hikey
+                                
+                                    <li>apq8016-sbc
+                                
+                                    <li>mustang
+                                
+                                    <li>moonshot
+                                
+                                    <li>thunderX
                                 
                                     <li>d03
                                 
                                     <li>d05
-                                
-                                    <li>overdrive
                                 
                                 </ul>
                             
@@ -80,7 +88,7 @@
                             
                                 <ul>
                                 
-                                    <li>manual-test
+                                    <li>lava-test-shell
                                 
                                 </ul>
                             
@@ -110,7 +118,13 @@
                             
                                 <ul>
                                 
-                                    <li>luvOS
+                                    <li>debian
+                                
+                                    <li>ubuntu
+                                
+                                    <li>fedora
+                                
+                                    <li>centos
                                 
                                 </ul>
                             
@@ -123,40 +137,43 @@
                 </tbody>
             </table>
             
+                <h3>Parameters</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            
+                            <tr>
+                                <td>IMAGE</td>
+                                <td>
+                                
+                                    aarch64/ubuntu
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                    </tbody>
+                </table>
+            
             
             <h3>Run</h3>
             <table class="table table-striped">
                 <tbody>
                     
                         <tr>
-                            <td>Download latest LuvOS stable live image http://releases.linaro.org/openembedded/luvos/</td>
+                            <td>cd ./automated/linux/docker/</td>
                         </tr>
                     
                         <tr>
-                            <td>Mount the image on local host and change the kernel to the one supporting tested hardware platform.</td>
+                            <td>./docker.sh -i "${IMAGE}"</td>
                         </tr>
                     
                         <tr>
-                            <td>Boot the board using the LuvOS live image</td>
+                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
                         </tr>
                     
                 </tbody>
             </table>
-            
-                <h3>Expected</h3>
-                <table class="table table-striped">
-                    <tbody>
-                        
-                            <tr>
-                                <td>All tests are executed upon boot</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>There are no failed tests</td>
-                            </tr>
-                        
-                    </tbody>
-                </table>
             
         </div>
     </body>

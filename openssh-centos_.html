@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>LuvOS</h1>
+            <h1>openssh-centos</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -22,7 +22,7 @@
                             
                                 <ul>
                                 
-                                    <li>milosz.wasilewski@linaro.org
+                                    <li>naresh.kamboju@linaro.org
                                 
                                 </ul>
                             
@@ -35,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                Execute all tests included in LuvOS. LuvOS is a distribution based on OpenEmbedded build system. It includes UEFI and ACPI test suites. More details in wiki: https://wiki.linaro.org/LEG/Engineering/LUV
+                                Normal OpenSSH development produces a very small, secure, and easy to maintain version for the OpenBSD project. The OpenSSH Portability Team takes that pure version and adds portability code so that OpenSSH can run on many other operating systems More details in wiki: http://www.openssh.com/portable.html
                             
                             </td>
                         </tr>
@@ -110,7 +110,9 @@
                             
                                 <ul>
                                 
-                                    <li>luvOS
+                                    <li>centos
+                                
+                                    <li>fedora
                                 
                                 </ul>
                             
@@ -129,15 +131,43 @@
                 <tbody>
                     
                         <tr>
-                            <td>Download latest LuvOS stable live image http://releases.linaro.org/openembedded/luvos/</td>
+                            <td>login as root and edit sudoers file</td>
                         </tr>
                     
                         <tr>
-                            <td>Mount the image on local host and change the kernel to the one supporting tested hardware platform.</td>
+                            <td>setup wheel group users without a password</td>
                         </tr>
                     
                         <tr>
-                            <td>Boot the board using the LuvOS live image</td>
+                            <td>{'uncomment this line "%wheel  ALL=(ALL)       NOPASSWD': 'ALL"'}</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>sudoedit /etc/sudoers</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>save and exit</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>{'logout and login as normal user ex': 'linaro'}</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ensure linaro user exit and belong to wheel group</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>run openssh-centos.sh</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>./openssh-centos.sh</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>run takes around 10 minutes</td>
                         </tr>
                     
                 </tbody>
@@ -148,11 +178,15 @@
                     <tbody>
                         
                             <tr>
-                                <td>All tests are executed upon boot</td>
+                                <td>all tests should pass</td>
                             </tr>
                         
                             <tr>
-                                <td>There are no failed tests</td>
+                                <td>get results from output/result.txt</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>if any openssh test fails please report bugs</td>
                             </tr>
                         
                     </tbody>

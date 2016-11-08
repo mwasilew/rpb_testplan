@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>LuvOS</h1>
+            <h1>toolchain-smoke</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -35,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                Execute all tests included in LuvOS. LuvOS is a distribution based on OpenEmbedded build system. It includes UEFI and ACPI test suites. More details in wiki: https://wiki.linaro.org/LEG/Engineering/LUV
+                                Simple test that checks whether gcc compilation works
                             
                             </td>
                         </tr>
@@ -46,43 +46,7 @@
                             <td>format</td>
                             <td>
                             
-                                Manual Test Definition 1.0
-                            
-                            </td>
-                        </tr>
-                        
-                    
-                        
-                        <tr>
-                            <td>devices</td>
-                            <td>
-                            
-                                <ul>
-                                
-                                    <li>d02
-                                
-                                    <li>d03
-                                
-                                    <li>d05
-                                
-                                    <li>overdrive
-                                
-                                </ul>
-                            
-                            </td>
-                        </tr>
-                        
-                    
-                        
-                        <tr>
-                            <td>environment</td>
-                            <td>
-                            
-                                <ul>
-                                
-                                    <li>manual-test
-                                
-                                </ul>
+                                Lava-Test-Shell Test Definition 1.0
                             
                             </td>
                         </tr>
@@ -110,7 +74,38 @@
                             
                                 <ul>
                                 
-                                    <li>luvOS
+                                    <li>debian
+                                
+                                    <li>ubuntu
+                                
+                                    <li>fedora
+                                
+                                    <li>centos
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>mustang
+                                
+                                    <li>overdrive
+                                
+                                    <li>moonshot
+                                
+                                    <li>thunderX
+                                
+                                    <li>d03
+                                
+                                    <li>d05
                                 
                                 </ul>
                             
@@ -123,40 +118,54 @@
                 </tbody>
             </table>
             
+                <h3>Parameters</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            
+                            <tr>
+                                <td>STATIC</td>
+                                <td>
+                                
+                                    False
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>SKIP_INSTALL</td>
+                                <td>
+                                
+                                    False
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                    </tbody>
+                </table>
+            
             
             <h3>Run</h3>
             <table class="table table-striped">
                 <tbody>
                     
                         <tr>
-                            <td>Download latest LuvOS stable live image http://releases.linaro.org/openembedded/luvos/</td>
+                            <td>cd ./automated/linux/toolchain-smoke/</td>
                         </tr>
                     
                         <tr>
-                            <td>Mount the image on local host and change the kernel to the one supporting tested hardware platform.</td>
+                            <td>./toolchain-smoke.sh -s ${SKIP_INSTALL} -t ${STATIC}</td>
                         </tr>
                     
                         <tr>
-                            <td>Boot the board using the LuvOS live image</td>
+                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
                         </tr>
                     
                 </tbody>
             </table>
-            
-                <h3>Expected</h3>
-                <table class="table table-striped">
-                    <tbody>
-                        
-                            <tr>
-                                <td>All tests are executed upon boot</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>There are no failed tests</td>
-                            </tr>
-                        
-                    </tbody>
-                </table>
             
         </div>
     </body>

@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>LuvOS</h1>
+            <h1>openstack-ceph-cloud</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -35,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                Execute all tests included in LuvOS. LuvOS is a distribution based on OpenEmbedded build system. It includes UEFI and ACPI test suites. More details in wiki: https://wiki.linaro.org/LEG/Engineering/LUV
+                                Functional tests of cloud instance
                             
                             </td>
                         </tr>
@@ -66,6 +66,8 @@
                                     <li>d05
                                 
                                     <li>overdrive
+                                
+                                    <li>moonshot
                                 
                                 </ul>
                             
@@ -110,7 +112,7 @@
                             
                                 <ul>
                                 
-                                    <li>luvOS
+                                    <li>CentOS
                                 
                                 </ul>
                             
@@ -129,15 +131,27 @@
                 <tbody>
                     
                         <tr>
-                            <td>Download latest LuvOS stable live image http://releases.linaro.org/openembedded/luvos/</td>
+                            <td>Any test cloud for will have at least 6 nodes. 3 controllers and 3 compute nodes. The three controllers will have Ceph monitors installed, the 3 compute nodes will have Ceph OSDs.</td>
                         </tr>
                     
                         <tr>
-                            <td>Mount the image on local host and change the kernel to the one supporting tested hardware platform.</td>
+                            <td>Install CentOS on all nodes</td>
                         </tr>
                     
                         <tr>
-                            <td>Boot the board using the LuvOS live image</td>
+                            <td>Deploy OpenStack + Ceph on all the nodes using the Reference Architecture.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Bootstrap the cloud with the services and users required (a script will be provided).</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Create a test tenant and spin a VM to be able to run tempest from it.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Use RefStack to run the 2016.08 guideline. Guideline can be obtained here - https://refstack.openstack.org/#/guidelines</td>
                         </tr>
                     
                 </tbody>
@@ -148,11 +162,11 @@
                     <tbody>
                         
                             <tr>
-                                <td>All tests are executed upon boot</td>
+                                <td>It is possible to bootstap a VM</td>
                             </tr>
                         
                             <tr>
-                                <td>There are no failed tests</td>
+                                <td>All tempest tests pass</td>
                             </tr>
                         
                     </tbody>
