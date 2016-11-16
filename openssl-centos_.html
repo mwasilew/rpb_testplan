@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>fio-test</h1>
+            <h1>openssl-centos</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -24,8 +24,6 @@
                                 
                                     <li>naresh.kamboju@linaro.org
                                 
-                                    <li>chase.qi@linaro.org
-                                
                                 </ul>
                             
                             </td>
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                FIO or Flexible IO is a versatile IO workload generator test on Linux.
+                                OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library ref: https://www.openssl.org
                             
                             </td>
                         </tr>
@@ -48,7 +46,7 @@
                             <td>format</td>
                             <td>
                             
-                                Lava-Test-Shell Test Definition 1.0
+                                Manual Test Definition 1.0
                             
                             </td>
                         </tr>
@@ -61,21 +59,13 @@
                             
                                 <ul>
                                 
-                                    <li>mustang
-                                
-                                    <li>overdrive
-                                
-                                    <li>d05
+                                    <li>d02
                                 
                                     <li>d03
                                 
-                                    <li>moonshot
+                                    <li>d05
                                 
-                                    <li>thunderX
-                                
-                                    <li>hi6220-hikey
-                                
-                                    <li>apq8016-sbc
+                                    <li>overdrive
                                 
                                 </ul>
                             
@@ -90,7 +80,7 @@
                             
                                 <ul>
                                 
-                                    <li>lava-test-shell
+                                    <li>manual-test
                                 
                                 </ul>
                             
@@ -105,7 +95,7 @@
                             
                                 <ul>
                                 
-                                    <li>performance
+                                    <li>functional
                                 
                                 </ul>
                             
@@ -119,10 +109,6 @@
                             <td>
                             
                                 <ul>
-                                
-                                    <li>debian
-                                
-                                    <li>ubuntu
                                 
                                     <li>centos
                                 
@@ -139,76 +125,68 @@
                 </tbody>
             </table>
             
-                <h3>Parameters</h3>
-                <table class="table table-striped">
-                    <tbody>
-                        
-                            
-                            <tr>
-                                <td>IOENGINE</td>
-                                <td>
-                                
-                                    sync
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>BLOCK_SIZE</td>
-                                <td>
-                                
-                                    4k
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>PARTITION</td>
-                                <td>
-                                
-                                    
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>SKIP_INSTALL</td>
-                                <td>
-                                
-                                    False
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                    </tbody>
-                </table>
-            
             
             <h3>Run</h3>
             <table class="table table-striped">
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/fio-test/</td>
+                            <td>login as root and edit sudoers file</td>
                         </tr>
                     
                         <tr>
-                            <td>./fio-test.sh -p "${PARTITION}" -i "${IOENGINE}" -b "${BLOCK_SIZE}" -s "${SKIP_INSTALL}"</td>
+                            <td>setup wheel group users without a password</td>
                         </tr>
                     
                         <tr>
-                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                            <td>{'uncomment this line "%wheel  ALL=(ALL)       NOPASSWD': 'ALL"'}</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>sudoedit /etc/sudoers</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>save and exit</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>{'logout and login as normal user ex': 'linaro'}</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>ensure linaro user exit and belong to wheel group</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>run openssl-centos.sh</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>./openssl-centos.sh</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>run takes around 10 minutes</td>
                         </tr>
                     
                 </tbody>
             </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>all tests should pass</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>if any openssl test fails please report bugs</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
             
         </div>
     </body>

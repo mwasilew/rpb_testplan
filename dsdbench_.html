@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>fio-test</h1>
+            <h1>dsdbench</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -21,8 +21,6 @@
                             <td>
                             
                                 <ul>
-                                
-                                    <li>naresh.kamboju@linaro.org
                                 
                                     <li>chase.qi@linaro.org
                                 
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                FIO or Flexible IO is a versatile IO workload generator test on Linux.
+                                dsdbench runs benchmarks and tests for storage driver configurations to help figure out how the configuration will perform and which known issues the daemon may be affected by in this configuration.
                             
                             </td>
                         </tr>
@@ -61,21 +59,19 @@
                             
                                 <ul>
                                 
+                                    <li>hi6220-hikey
+                                
+                                    <li>apq8016-sbc
+                                
                                     <li>mustang
-                                
-                                    <li>overdrive
-                                
-                                    <li>d05
-                                
-                                    <li>d03
                                 
                                     <li>moonshot
                                 
                                     <li>thunderX
                                 
-                                    <li>hi6220-hikey
+                                    <li>d03
                                 
-                                    <li>apq8016-sbc
+                                    <li>d05
                                 
                                 </ul>
                             
@@ -107,6 +103,8 @@
                                 
                                     <li>performance
                                 
+                                    <li>functional
+                                
                                 </ul>
                             
                             </td>
@@ -124,9 +122,9 @@
                                 
                                     <li>ubuntu
                                 
-                                    <li>centos
-                                
                                     <li>fedora
+                                
+                                    <li>centos
                                 
                                 </ul>
                             
@@ -145,32 +143,10 @@
                         
                             
                             <tr>
-                                <td>IOENGINE</td>
+                                <td>TEST_SUITE</td>
                                 <td>
                                 
-                                    sync
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>BLOCK_SIZE</td>
-                                <td>
-                                
-                                    4k
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>PARTITION</td>
-                                <td>
-                                
-                                    
+                                    BENCHMARKS
                                 
                                 </td>
                             </tr>
@@ -196,11 +172,11 @@
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/fio-test/</td>
+                            <td>cd ./automated/linux/dsdbench/</td>
                         </tr>
                     
                         <tr>
-                            <td>./fio-test.sh -p "${PARTITION}" -i "${IOENGINE}" -b "${BLOCK_SIZE}" -s "${SKIP_INSTALL}"</td>
+                            <td>./dsdbench.sh -t "${TEST_SUITE}" -s "${SKIP_INSTALL}"</td>
                         </tr>
                     
                         <tr>

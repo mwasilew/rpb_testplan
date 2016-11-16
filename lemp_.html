@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>fio-test</h1>
+            <h1>lemp</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -21,8 +21,6 @@
                             <td>
                             
                                 <ul>
-                                
-                                    <li>naresh.kamboju@linaro.org
                                 
                                     <li>chase.qi@linaro.org
                                 
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                FIO or Flexible IO is a versatile IO workload generator test on Linux.
+                                LEMP stack is a group of open source software to get web server up and running. The acronym stands for Linux, nginx, MySQL and PHP.
                             
                             </td>
                         </tr>
@@ -48,51 +46,7 @@
                             <td>format</td>
                             <td>
                             
-                                Lava-Test-Shell Test Definition 1.0
-                            
-                            </td>
-                        </tr>
-                        
-                    
-                        
-                        <tr>
-                            <td>devices</td>
-                            <td>
-                            
-                                <ul>
-                                
-                                    <li>mustang
-                                
-                                    <li>overdrive
-                                
-                                    <li>d05
-                                
-                                    <li>d03
-                                
-                                    <li>moonshot
-                                
-                                    <li>thunderX
-                                
-                                    <li>hi6220-hikey
-                                
-                                    <li>apq8016-sbc
-                                
-                                </ul>
-                            
-                            </td>
-                        </tr>
-                        
-                    
-                        
-                        <tr>
-                            <td>environment</td>
-                            <td>
-                            
-                                <ul>
-                                
-                                    <li>lava-test-shell
-                                
-                                </ul>
+                                Lava-Test Test Definition 1.0
                             
                             </td>
                         </tr>
@@ -105,7 +59,7 @@
                             
                                 <ul>
                                 
-                                    <li>performance
+                                    <li>functional
                                 
                                 </ul>
                             
@@ -122,11 +76,32 @@
                                 
                                     <li>debian
                                 
-                                    <li>ubuntu
-                                
                                     <li>centos
                                 
-                                    <li>fedora
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>mustang
+                                
+                                    <li>overdrive
+                                
+                                    <li>moonshot
+                                
+                                    <li>thunderX
+                                
+                                    <li>d03
+                                
+                                    <li>d05
                                 
                                 </ul>
                             
@@ -139,68 +114,17 @@
                 </tbody>
             </table>
             
-                <h3>Parameters</h3>
-                <table class="table table-striped">
-                    <tbody>
-                        
-                            
-                            <tr>
-                                <td>IOENGINE</td>
-                                <td>
-                                
-                                    sync
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>BLOCK_SIZE</td>
-                                <td>
-                                
-                                    4k
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>PARTITION</td>
-                                <td>
-                                
-                                    
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>SKIP_INSTALL</td>
-                                <td>
-                                
-                                    False
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                    </tbody>
-                </table>
-            
             
             <h3>Run</h3>
             <table class="table table-striped">
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/fio-test/</td>
+                            <td>cd ./automated/linux/lemp/</td>
                         </tr>
                     
                         <tr>
-                            <td>./fio-test.sh -p "${PARTITION}" -i "${IOENGINE}" -b "${BLOCK_SIZE}" -s "${SKIP_INSTALL}"</td>
+                            <td>./lemp.sh</td>
                         </tr>
                     
                         <tr>

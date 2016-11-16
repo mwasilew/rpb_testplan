@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>fio-test</h1>
+            <h1>disk-boot</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -24,8 +24,6 @@
                                 
                                     <li>naresh.kamboju@linaro.org
                                 
-                                    <li>chase.qi@linaro.org
-                                
                                 </ul>
                             
                             </td>
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                FIO or Flexible IO is a versatile IO workload generator test on Linux.
+                                Boot Linux operating system from pre-installed hard disk and mount rootfs
                             
                             </td>
                         </tr>
@@ -48,7 +46,7 @@
                             <td>format</td>
                             <td>
                             
-                                Lava-Test-Shell Test Definition 1.0
+                                Manual Test Definition 1.0
                             
                             </td>
                         </tr>
@@ -61,21 +59,15 @@
                             
                                 <ul>
                                 
-                                    <li>mustang
-                                
-                                    <li>overdrive
-                                
-                                    <li>d05
+                                    <li>d02
                                 
                                     <li>d03
                                 
+                                    <li>d05
+                                
+                                    <li>overdrive
+                                
                                     <li>moonshot
-                                
-                                    <li>thunderX
-                                
-                                    <li>hi6220-hikey
-                                
-                                    <li>apq8016-sbc
                                 
                                 </ul>
                             
@@ -90,7 +82,7 @@
                             
                                 <ul>
                                 
-                                    <li>lava-test-shell
+                                    <li>manual-test
                                 
                                 </ul>
                             
@@ -105,7 +97,7 @@
                             
                                 <ul>
                                 
-                                    <li>performance
+                                    <li>functional
                                 
                                 </ul>
                             
@@ -139,76 +131,52 @@
                 </tbody>
             </table>
             
-                <h3>Parameters</h3>
-                <table class="table table-striped">
-                    <tbody>
-                        
-                            
-                            <tr>
-                                <td>IOENGINE</td>
-                                <td>
-                                
-                                    sync
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>BLOCK_SIZE</td>
-                                <td>
-                                
-                                    4k
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>PARTITION</td>
-                                <td>
-                                
-                                    
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>SKIP_INSTALL</td>
-                                <td>
-                                
-                                    False
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                    </tbody>
-                </table>
-            
             
             <h3>Run</h3>
             <table class="table table-striped">
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/fio-test/</td>
+                            <td>After successful installation, reboot the board</td>
                         </tr>
                     
                         <tr>
-                            <td>./fio-test.sh -p "${PARTITION}" -i "${IOENGINE}" -b "${BLOCK_SIZE}" -s "${SKIP_INSTALL}"</td>
+                            <td>UEFI should take the control to default boot</td>
                         </tr>
                     
                         <tr>
-                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                            <td>Do not interrupt this, let it boot automatically</td>
                         </tr>
                     
                 </tbody>
             </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>Linux kernel should start booting</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Watch kernel boot log it should detect sda/sdb or hda/hdb [   15.362985]  sda sda1 sda2 sda3 [   15.363433] sd 1 0 0 0 [sda] Attached SCSI disk [   15.651309] EXT4-fs (sda1) mounted filesystem with ordered data mode. Opts (null)</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Linux should boot to shell, without kernel panic, crash, hang or any other serve error observed</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>The Linux shell should not boot to initramfs shell or minimal shell</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Linux should boot default shell or it should ask for username and password (provide credentials for login)</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
             
         </div>
     </body>

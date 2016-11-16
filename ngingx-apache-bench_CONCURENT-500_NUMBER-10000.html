@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>fio-test</h1>
+            <h1>ngingx-apache-bench</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -22,9 +22,7 @@
                             
                                 <ul>
                                 
-                                    <li>naresh.kamboju@linaro.org
-                                
-                                    <li>chase.qi@linaro.org
+                                    <li>milosz.wasilewski@linaro.org
                                 
                                 </ul>
                             
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                FIO or Flexible IO is a versatile IO workload generator test on Linux.
+                                Apachebench is a benchmark created to measure the webserver performance on HTTP protocol. This test runs apachebench against apache nginx
                             
                             </td>
                         </tr>
@@ -48,51 +46,7 @@
                             <td>format</td>
                             <td>
                             
-                                Lava-Test-Shell Test Definition 1.0
-                            
-                            </td>
-                        </tr>
-                        
-                    
-                        
-                        <tr>
-                            <td>devices</td>
-                            <td>
-                            
-                                <ul>
-                                
-                                    <li>mustang
-                                
-                                    <li>overdrive
-                                
-                                    <li>d05
-                                
-                                    <li>d03
-                                
-                                    <li>moonshot
-                                
-                                    <li>thunderX
-                                
-                                    <li>hi6220-hikey
-                                
-                                    <li>apq8016-sbc
-                                
-                                </ul>
-                            
-                            </td>
-                        </tr>
-                        
-                    
-                        
-                        <tr>
-                            <td>environment</td>
-                            <td>
-                            
-                                <ul>
-                                
-                                    <li>lava-test-shell
-                                
-                                </ul>
+                                Lava-Test Test Definition 1.0
                             
                             </td>
                         </tr>
@@ -122,11 +76,32 @@
                                 
                                     <li>debian
                                 
-                                    <li>ubuntu
-                                
                                     <li>centos
                                 
-                                    <li>fedora
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>mustang
+                                
+                                    <li>overdrive
+                                
+                                    <li>thunderX
+                                
+                                    <li>d02
+                                
+                                    <li>d03
+                                
+                                    <li>d05
                                 
                                 </ul>
                             
@@ -145,32 +120,10 @@
                         
                             
                             <tr>
-                                <td>IOENGINE</td>
+                                <td>CONCURENT</td>
                                 <td>
                                 
-                                    sync
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>BLOCK_SIZE</td>
-                                <td>
-                                
-                                    4k
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>PARTITION</td>
-                                <td>
-                                
-                                    
+                                    500
                                 
                                 </td>
                             </tr>
@@ -187,6 +140,17 @@
                             </tr>
                             
                         
+                            
+                            <tr>
+                                <td>NUMBER</td>
+                                <td>
+                                
+                                    10000
+                                
+                                </td>
+                            </tr>
+                            
+                        
                     </tbody>
                 </table>
             
@@ -196,11 +160,11 @@
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/fio-test/</td>
+                            <td>cd ./automated/linux/nginx-apache-bench/</td>
                         </tr>
                     
                         <tr>
-                            <td>./fio-test.sh -p "${PARTITION}" -i "${IOENGINE}" -b "${BLOCK_SIZE}" -s "${SKIP_INSTALL}"</td>
+                            <td>./apache-bench.sh -s "${SKIP_INSTALL}" -n "${NUMBER}" -c "${CONCURENT}"</td>
                         </tr>
                     
                         <tr>

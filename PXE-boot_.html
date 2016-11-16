@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>fio-test</h1>
+            <h1>PXE-boot</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -24,8 +24,6 @@
                                 
                                     <li>naresh.kamboju@linaro.org
                                 
-                                    <li>chase.qi@linaro.org
-                                
                                 </ul>
                             
                             </td>
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                FIO or Flexible IO is a versatile IO workload generator test on Linux.
+                                The Preboot eXecution Environment specification describes as standardized client-server environment that boots a software assembly, retrieved from a network, on PXE-enabled clients. More details in wiki: https://en.wikipedia.org/wiki/Preboot_Execution_Environment
                             
                             </td>
                         </tr>
@@ -48,7 +46,7 @@
                             <td>format</td>
                             <td>
                             
-                                Lava-Test-Shell Test Definition 1.0
+                                Manual Test Definition 1.0
                             
                             </td>
                         </tr>
@@ -61,21 +59,17 @@
                             
                                 <ul>
                                 
-                                    <li>mustang
+                                    <li>d02
                                 
-                                    <li>overdrive
+                                    <li>d03
                                 
                                     <li>d05
                                 
-                                    <li>d03
+                                    <li>overdrive
                                 
                                     <li>moonshot
                                 
                                     <li>thunderX
-                                
-                                    <li>hi6220-hikey
-                                
-                                    <li>apq8016-sbc
                                 
                                 </ul>
                             
@@ -90,7 +84,7 @@
                             
                                 <ul>
                                 
-                                    <li>lava-test-shell
+                                    <li>manual-test
                                 
                                 </ul>
                             
@@ -105,7 +99,7 @@
                             
                                 <ul>
                                 
-                                    <li>performance
+                                    <li>functional
                                 
                                 </ul>
                             
@@ -139,76 +133,64 @@
                 </tbody>
             </table>
             
-                <h3>Parameters</h3>
-                <table class="table table-striped">
-                    <tbody>
-                        
-                            
-                            <tr>
-                                <td>IOENGINE</td>
-                                <td>
-                                
-                                    sync
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>BLOCK_SIZE</td>
-                                <td>
-                                
-                                    4k
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>PARTITION</td>
-                                <td>
-                                
-                                    
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>SKIP_INSTALL</td>
-                                <td>
-                                
-                                    False
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                    </tbody>
-                </table>
-            
             
             <h3>Run</h3>
             <table class="table table-striped">
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/fio-test/</td>
+                            <td>In order to have a working PXE environment, DHCP and TFTP server is required</td>
                         </tr>
                     
                         <tr>
-                            <td>./fio-test.sh -p "${PARTITION}" -i "${IOENGINE}" -b "${BLOCK_SIZE}" -s "${SKIP_INSTALL}"</td>
+                            <td>Setup the DHCP and TFTP Server on your host machine https://github.com/Linaro/documentation/blob/master/Reference-Platform/EECommon/DHCP-TFTP-Server-UEFI.md</td>
                         </tr>
                     
                         <tr>
-                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                            <td>Provision TFTP with latest CentOS/Debian installer</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Create the Grub2 config file pointing to new installer build files</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>On target board make sure to select network boot</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Reboot the target board</td>
                         </tr>
                     
                 </tbody>
             </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>Target board boots and starts downloading OS installer from TFTP</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Installer should install given OS successfully, without kernel panic, crash, hang or any other serve error observed</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>After successful installation target board reboots</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>The OS should boot to Linux shell prompt</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>The Linux shell should not boot to initramfs shell or minimal shell</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
             
         </div>
     </body>
