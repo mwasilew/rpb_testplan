@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>network-tests-basic</h1>
+            <h1>iperf</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -22,9 +22,7 @@
                             
                                 <ul>
                                 
-                                    <li>milosz.wasilewski@linaro.org
-                                
-                                    <li>naresh.kamboju@linaro.org
+                                    <li>chase.qi@linaro.org
                                 
                                 </ul>
                             
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                Basic network test commands
+                                iperf is a tool for active measurements of the maximum achievable bandwidth on IP networks.
                             
                             </td>
                         </tr>
@@ -48,7 +46,49 @@
                             <td>format</td>
                             <td>
                             
-                                Lava-Test Test Definition 1.0
+                                Lava-Test-Shell Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>hi6220-hikey
+                                
+                                    <li>apq8016-sbc
+                                
+                                    <li>mustang
+                                
+                                    <li>moonshot
+                                
+                                    <li>thunderX
+                                
+                                    <li>d03
+                                
+                                    <li>d05
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>lava-test-shell
+                                
+                                </ul>
                             
                             </td>
                         </tr>
@@ -61,7 +101,7 @@
                             
                                 <ul>
                                 
-                                    <li>functional
+                                    <li>performance
                                 
                                 </ul>
                             
@@ -80,46 +120,9 @@
                                 
                                     <li>ubuntu
                                 
-                                    <li>centos
-                                
                                     <li>fedora
                                 
-                                </ul>
-                            
-                            </td>
-                        </tr>
-                        
-                    
-                        
-                        <tr>
-                            <td>devices</td>
-                            <td>
-                            
-                                <ul>
-                                
-                                    <li>panda
-                                
-                                    <li>panda-es
-                                
-                                    <li>vexpress-tc2
-                                
-                                    <li>juno
-                                
-                                    <li>d03
-                                
-                                    <li>d05
-                                
-                                    <li>overdrive
-                                
-                                    <li>mustang
-                                
-                                    <li>moonshot
-                                
-                                    <li>thunderX
-                                
-                                    <li>hi6220-hikey
-                                
-                                    <li>apq8016-sbc
+                                    <li>centos
                                 
                                 </ul>
                             
@@ -138,10 +141,10 @@
                         
                             
                             <tr>
-                                <td>INTERFACE</td>
+                                <td>THREADS</td>
                                 <td>
                                 
-                                    eth0
+                                    1
                                 
                                 </td>
                             </tr>
@@ -152,7 +155,18 @@
                                 <td>SKIP_INSTALL</td>
                                 <td>
                                 
-                                    False
+                                    false
+                                
+                                </td>
+                            </tr>
+                            
+                        
+                            
+                            <tr>
+                                <td>TIME</td>
+                                <td>
+                                
+                                    10
                                 
                                 </td>
                             </tr>
@@ -167,11 +181,11 @@
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/network-basic/</td>
+                            <td>cd ./automated/linux/iperf/</td>
                         </tr>
                     
                         <tr>
-                            <td>./network-basic.sh -s "${SKIP_INSTALL}" -i "${INTERFACE}"</td>
+                            <td>./iperf.sh -t "${TIME}" -p "${THREADS}" -s "${SKIP_INSTALL}"</td>
                         </tr>
                     
                         <tr>

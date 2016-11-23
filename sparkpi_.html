@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>network-tests-basic</h1>
+            <h1>sparkpi</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -24,7 +24,7 @@
                                 
                                     <li>milosz.wasilewski@linaro.org
                                 
-                                    <li>naresh.kamboju@linaro.org
+                                    <li>ganesh.raju@linaro.org
                                 
                                 </ul>
                             
@@ -37,7 +37,7 @@
                             <td>description</td>
                             <td>
                             
-                                Basic network test commands
+                                Functional tests of Spark - sparkpi
                             
                             </td>
                         </tr>
@@ -48,7 +48,45 @@
                             <td>format</td>
                             <td>
                             
-                                Lava-Test Test Definition 1.0
+                                Manual Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>d02
+                                
+                                    <li>d03
+                                
+                                    <li>d05
+                                
+                                    <li>overdrive
+                                
+                                    <li>moonshot
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>manual-test
+                                
+                                </ul>
                             
                             </td>
                         </tr>
@@ -76,50 +114,9 @@
                             
                                 <ul>
                                 
-                                    <li>debian
-                                
-                                    <li>ubuntu
-                                
                                     <li>centos
                                 
-                                    <li>fedora
-                                
-                                </ul>
-                            
-                            </td>
-                        </tr>
-                        
-                    
-                        
-                        <tr>
-                            <td>devices</td>
-                            <td>
-                            
-                                <ul>
-                                
-                                    <li>panda
-                                
-                                    <li>panda-es
-                                
-                                    <li>vexpress-tc2
-                                
-                                    <li>juno
-                                
-                                    <li>d03
-                                
-                                    <li>d05
-                                
-                                    <li>overdrive
-                                
-                                    <li>mustang
-                                
-                                    <li>moonshot
-                                
-                                    <li>thunderX
-                                
-                                    <li>hi6220-hikey
-                                
-                                    <li>apq8016-sbc
+                                    <li>debian
                                 
                                 </ul>
                             
@@ -131,35 +128,6 @@
                     
                 </tbody>
             </table>
-            
-                <h3>Parameters</h3>
-                <table class="table table-striped">
-                    <tbody>
-                        
-                            
-                            <tr>
-                                <td>INTERFACE</td>
-                                <td>
-                                
-                                    eth0
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                            
-                            <tr>
-                                <td>SKIP_INSTALL</td>
-                                <td>
-                                
-                                    False
-                                
-                                </td>
-                            </tr>
-                            
-                        
-                    </tbody>
-                </table>
             
             
             <h3>Run</h3>
@@ -167,19 +135,46 @@
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/network-basic/</td>
+                            <td>Make sure OpenJDK8 is installed by typing: $ java -version NOTE: If this step fails, then fail the test</td>
                         </tr>
                     
                         <tr>
-                            <td>./network-basic.sh -s "${SKIP_INSTALL}" -i "${INTERFACE}"</td>
+                            <td>Follow the steps of Installation from wiki 'https://wiki.linaro.org/LEG/Engineering/BigData/Installing_Hadoop_2_7_2_Spark_2_0_Hive_2_1_0'</td>
                         </tr>
                     
                         <tr>
-                            <td>../../utils/send-to-lava.sh ./output/result.txt</td>
+                            <td>Verify apache spark installation by testing spark shell. By typing: $ SPARK_HOME/bin/spark-shell --master local[*]</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run sparkpi example workload. By typing: $ SPARK_HOME/bin/run-example SparkPi 100</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run the following command to quit from spark-shell $ exit() </td>
                         </tr>
                     
                 </tbody>
             </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>'$ java --version' should display OpenJDK8 as JDK version</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>'Verify apache spark installation' step should create a new Spark shell session successfully.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>'Run sparkpi example' step should start a job and complete without error. The job output should list the estimate value of pi to the number of characters specified.</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
             
         </div>
     </body>

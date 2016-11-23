@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>software-raid1</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>chase.qi@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Use Linux utility mdadm to create, rebuild and delete software RAID1. RAID1 consists of data mirroring, without parity or striping.
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Manual Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>d02
+                                
+                                    <li>d03
+                                
+                                    <li>d05
+                                
+                                    <li>overdrive
+                                
+                                    <li>moonshot
+                                
+                                    <li>thunderX
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>manual-test
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>functional
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>debian
+                                
+                                    <li>ubuntu
+                                
+                                    <li>centos
+                                
+                                    <li>fedora
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>Install OS on the SUT(system under test) and make sure it boots.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Power off the SUT and install three extra hard drives(use sd(b|c|d) here). The three hard drives shoud have the same mode, at least the same capacity.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Boot to OS and make sure mdadm utility installed.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Create 'Linux RAID auto' partition on each of the three hard drives by running the following steps.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>1) "fdisk /dev/sdx"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>2) Delete all existing partitions with fdisk command "d"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>3) Create Linux raid auto partition with fdisk commands "n -> p -> 1 -> enter -> enter -> t -> fd -> w"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Run the following steps to test RAID1.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>1) "mdadm --create /dev/md0 --level=mirror --raid-devices=2 /dev/sd[b-c]1"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>2) Monitor '/proc/mdstat' to check if md0 created and running.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>3) "mkfs.ext4 /dev/md0"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>4) "mount /dev/md0 /mnt"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>5) "echo 'RAID1 test' > /mnt raid1-test.txt"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>6) Intentionally set faulty partition with command "mdadm --manage --set-faulty /dev/md0 /dev/sdc1"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>7) Execute "mdadm --detail /dev/md0" and check if RAID array shown as 'degraded' and sdc1 shown as 'faulty spare'.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>8) Execute "mdadm --manage /dev/md0 -r /dev/sdc1" to remove sdc1.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>9) Verify that '/mnt/raid1-test.txt' is not damaged.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>10) Execute "mdadm --manage /dev/md0 -a /dev/sdd1" to add sdd1.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>11) Monitor the output of "mdadm --detail /dev/md0" and make sure that md0 'rebuilding' can be finished.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Remove the md0 by running the following steps.</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>1) "umount /dev/md0"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>2) "mdadm --stop /dev/md0"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>3) "mdadm --remove /dev/md0"</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>4) "mdadm --zero-superblock /dev/sdb1 /dev/sdc1 /dev/sdd1"</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>RAID1 array creating, deleting and rebuilding are successful.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>When one disk of RAID1 array damaged or removed, no data loss.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>When faulty disk replaced with a new one, RAID1 array can be rebuilt.</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            
+        </div>
+    </body>
+</html>

@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>network-tests-basic</h1>
+            <h1>pointer-tagging-tests</h1>
             <h3>Metadata</h3>
             <table class="table table-striped">
                 <tbody>
@@ -21,8 +21,6 @@
                             <td>
                             
                                 <ul>
-                                
-                                    <li>milosz.wasilewski@linaro.org
                                 
                                     <li>naresh.kamboju@linaro.org
                                 
@@ -37,7 +35,7 @@
                             <td>description</td>
                             <td>
                             
-                                Basic network test commands
+                                This test suite is designed to verify that the AArch64 tagged-addressing feature is properly supported. Tagged addressing is guaranteed to be available in the ARMv8 architecture
                             
                             </td>
                         </tr>
@@ -48,7 +46,7 @@
                             <td>format</td>
                             <td>
                             
-                                Lava-Test Test Definition 1.0
+                                Lava-Test-Shell Test Definition 1.0
                             
                             </td>
                         </tr>
@@ -97,29 +95,19 @@
                             
                                 <ul>
                                 
-                                    <li>panda
-                                
-                                    <li>panda-es
-                                
-                                    <li>vexpress-tc2
-                                
                                     <li>juno
-                                
-                                    <li>d03
-                                
-                                    <li>d05
                                 
                                     <li>overdrive
                                 
-                                    <li>mustang
+                                    <li>d05
                                 
-                                    <li>moonshot
-                                
-                                    <li>thunderX
+                                    <li>d03
                                 
                                     <li>hi6220-hikey
                                 
                                     <li>apq8016-sbc
+                                
+                                    <li>rtsm_fvp_base-aemv8a
                                 
                                 </ul>
                             
@@ -135,17 +123,6 @@
                 <h3>Parameters</h3>
                 <table class="table table-striped">
                     <tbody>
-                        
-                            
-                            <tr>
-                                <td>INTERFACE</td>
-                                <td>
-                                
-                                    eth0
-                                
-                                </td>
-                            </tr>
-                            
                         
                             
                             <tr>
@@ -167,11 +144,11 @@
                 <tbody>
                     
                         <tr>
-                            <td>cd ./automated/linux/network-basic/</td>
+                            <td>cd ./automated/linux/pointer-tagging/</td>
                         </tr>
                     
                         <tr>
-                            <td>./network-basic.sh -s "${SKIP_INSTALL}" -i "${INTERFACE}"</td>
+                            <td>./pointer-tagging-tests.sh -s "${SKIP_INSTALL}"</td>
                         </tr>
                     
                         <tr>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>hadoop-terasort</h1>
+            <h3>Metadata</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>milosz.wasilewski@linaro.org
+                                
+                                    <li>ganesh.raju@linaro.org
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                            
+                                Functional tests of hadoop
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                            
+                                Manual Test Definition 1.0
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>d02
+                                
+                                    <li>d03
+                                
+                                    <li>d05
+                                
+                                    <li>overdrive
+                                
+                                    <li>moonshot
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>environment</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>manual-test
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>scope</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>performance
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                            
+                                <ul>
+                                
+                                    <li>centos
+                                
+                                    <li>debian
+                                
+                                </ul>
+                            
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                    
+                </tbody>
+            </table>
+            
+            
+            <h3>Run</h3>
+            <table class="table table-striped">
+                <tbody>
+                    
+                        <tr>
+                            <td>Step1: Make sure OpenJDK8 is installed by typing: $ java -version NOTE: If this step fails, then fail the test</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step2: Follow the steps of Installation from wiki 'https://wiki.linaro.org/LEG/Engineering/BigData/Installing_Hadoop_2_7_2_Spark_2_0_Hive_2_1_0'</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step3: To configure Hive with Hadoop, you need to edit the hive-env.sh file, which is placed in the $HIVE_HOME/conf directory. The following commands redirect to Hive config folder and copy the template file: $ cd $HIVE_HOME/conf $ cp hive-env.sh.template hive-env.sh</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step4: Edit the hive-env.sh file by appending the following line: $ export HADOOP_HOME=/usr/local/hadoop</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step5: Derby is required to test Hive. Follow the steps to download and install apache derby. For Ref - wiki https://wiki.linaro.org/LEG/Engineering/BigData/Hive#Downloading_Apache_Derby $ cd ~ $ wget http://archive.apache.org/dist/db/derby/db-derby-10.4.2.0/db-derby-10.4.2.0-bin.tar.gz $ tar zxvf db-derby-10.4.2.0-bin.tar.gz $ su - passwd: # cd /home/user # mv db-derby-10.4.2.0-bin /usr/local/derby # exit</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step6: Configure Environment for Derby, by following the steps: $ export DERBY_HOME=/usr/local/derby $ export PATH=$PATH:$DERBY_HOME/bin $ export CLASSPATH=$CLASSPATH:$DERBY_HOME/lib/derby.jar:$DERBY_HOME/lib/derbytools.jar</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step7: Create a directory to store Hive MetaStore $ mkdir $DERBY_HOME/data</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step8: Configure Metastore for Hive. $ cd $HIVE_HOME/conf $ cp hive-default.xml.template hive-site.xml</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step9: Edit hive-site.xml and append the following lines between the <configuration> and </configuration> tags: <property> <name>javax.jdo.option.ConnectionURL</name> <value>jdbc:derby://localhost:1527/metastore_db;create=true </value> <description>JDBC connect string for a JDBC metastore </description> </property></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step10: Create a file named jpox.properties and add the following lines into it: javax.jdo.PersistenceManagerFactoryClass = org.jpox.PersistenceManagerFactoryImpl org.jpox.autoCreateSchema = false org.jpox.validateTables = false org.jpox.validateColumns = false org.jpox.validateConstraints = false org.jpox.storeManagerType = rdbms org.jpox.autoCreateSchema = true org.jpox.autoStartMechanismMode = checked org.jpox.transactionIsolation = read_committed javax.jdo.option.DetachAllOnCommit = true javax.jdo.option.NontransactionalRead = true javax.jdo.option.ConnectionDriverName = org.apache.derby.jdbc.ClientDriver javax.jdo.option.ConnectionURL = jdbc:derby://hadoop1:1527/metastore_db;create = true javax.jdo.option.ConnectionUserName = APP javax.jdo.option.ConnectionPassword = mine</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step11: Create a tmp directory before running hive and give write permissions $ mkdir tmp $ chmod g+w</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step12: Set up HDFS before verifying Hive $ $HADOOP_HOME/bin/hadoop fs -mkdir /tmp $ $HADOOP_HOME/bin/hadoop fs -mkdir /user/hive/warehouse $ $HADOOP_HOME/bin/hadoop fs -chmod g+w /tmp $ $HADOOP_HOME/bin/hadoop fs -chmod g+w /user/hive/warehouse</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step13: Verify Hive Installation, by typing the following command to create Hive shell $HIVE_HOME/bin/hive</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step14: Run show tables command hive> show tables;</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Step15: Type the following command to exit Hive shell hive> quit</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            
+                <h3>Expected</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        
+                            <tr>
+                                <td>Step1: Should display OpenJDK8 as JDK version</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Step2: Installation should be successful without any errors.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Step13: Should open a hive shell.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Step14: Should print out time taken to run the command with the results (list of tables)</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            
+        </div>
+    </body>
+</html>
