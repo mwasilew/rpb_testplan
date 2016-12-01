@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="metadata">
+                <h1>Metadata</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>maintainer</td>
+                            <td>
+                                
+                                    <ul>
+                                    
+                                        <li>milosz.wasilewski@linaro.org
+                                    
+                                    </ul>
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>name</td>
+                            <td>
+                                
+                                    rpb-ee-1612-common
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>format</td>
+                            <td>
+                                
+                                    Linaro Test Plan v1
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>approver</td>
+                            <td>
+                                
+                                    <ul>
+                                    
+                                        <li>alan.benett@linaro.org
+                                    
+                                    </ul>
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>os</td>
+                            <td>
+                                
+                                    CentOS
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>devices</td>
+                            <td>
+                                
+                                    <ul>
+                                    
+                                        <li>d03
+                                    
+                                        <li>d05
+                                    
+                                        <li>thunderX
+                                    
+                                        <li>moonshot
+                                    
+                                        <li>mustang
+                                    
+                                        <li>overdrive
+                                    
+                                    </ul>
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>description</td>
+                            <td>
+                                
+                                    Test plan for EE RPB. Common features across all boards
+                                
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div id="requirements">
+                <h1>Requirements</h1>
+                
+                    
+                    <div class="covered">
+                    <h2>1 Linux kernel</h2>
+                    <h4>Owner: alan.bennett@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>1.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="hackbench_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/hackbench/hackbench.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>2 KVM system emulation</h2>
+                    <h4>Owner: alan.bennett@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>2.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="hackbench_TARGET-guest.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>parameters</td>
+                <td>
+                
+                    
+                    <strong>TARGET</strong>: guest<br/>
+                    
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/hackbench/hackbench.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>3 OpenSSL</h2>
+                    <h4>Owner: alan.bennett@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>3.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="openssl-speed_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/openssl/openssl-speed.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>4 Networking performance</h2>
+                    <h4>Owner: alan.bennett@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>4.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="iperf_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/iperf/iperf.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>5 Memory performance</h2>
+                    <h4>Owner: alan.bennett@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>5.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="lmbench-memory_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/lmbench/lmbench-memory.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div >
+                            <h5>5.2</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="stream-uniprocessor_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/stream/stream-uniprocessor.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>6 Disk performance</h2>
+                    <h4>Owner: alan.bennett@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>6.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="fio-test_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/fio-test/fio-test.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div >
+                            <h5>6.2</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="dd-speed-test_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/dd-wr-speed/dd-wr-speed.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div >
+                            <h5>6.3</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="device-read-perf_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/device-read-perf/device-read-perf.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                            <div >
+                            <h5>6.4</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="blogbench_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/blogbench/blogbench.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>7 CPU performance</h2>
+                    <h4>Owner: alan.bennett@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>7.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="linpack_.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/linpack/linpack.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>8 Apache webserver performance</h2>
+                    <h4>Owner: alan.bennett@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>8.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="apache-apache-bench_CONCURENT-500_NUMBER-10000.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>parameters</td>
+                <td>
+                
+                    
+                    <strong>CONCURENT</strong>: 500<br/>
+                    
+                    <strong>NUMBER</strong>: 10000<br/>
+                    
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/apache-apache-bench/apache-bench.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+                    
+                    <div class="covered">
+                    <h2>9 NGiNX webserver performance</h2>
+                    <h4>Owner: alan.bennett@linaro.org</h4>
+                    
+                        
+                        
+                        <h3>Automated tests</h3>
+                            
+                            <div >
+                            <h5>9.1</h5>
+                            <table class="table table-striped">
+    
+    <h4><a href="ngingx-apache-bench_CONCURENT-500_NUMBER-10000.html">details</a></h4>
+    
+    <tbody>
+        
+            
+            <tr>
+                <td>mandatory</td>
+                <td>
+                
+                    True
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>parameters</td>
+                <td>
+                
+                    
+                    <strong>CONCURENT</strong>: 500<br/>
+                    
+                    <strong>NUMBER</strong>: 10000<br/>
+                    
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>repository</td>
+                <td>
+                
+                    https://git.linaro.org/qa/test-definitions.git
+                
+            </tr>
+            
+        
+            
+        
+            
+        
+            
+            <tr>
+                <td>path</td>
+                <td>
+                
+                    automated/linux/nginx-apache-bench/apache-bench.yaml
+                
+            </tr>
+            
+        
+            
+            <tr>
+                <td>revision</td>
+                <td>
+                
+                    0d75a6be64b49303987fca1d9f4a8591b6f3818b
+
+                
+            </tr>
+            
+        
+    </tbody>
+</table>
+                            </div>
+                            
+                        
+                    
+                    </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
